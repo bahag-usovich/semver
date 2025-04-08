@@ -1,0 +1,37 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+      - canary
+      - 1.x
+      - 2.x
+      - 3.x
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          check-latest: true
+      -
+        name: Install dependencies
+        run: npm ci
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_SEMANTIC_RELEASE }}
+        run: npx semantic-release
