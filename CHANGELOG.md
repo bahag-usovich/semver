@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/bahag-buttf/semver/compare/v2.0.0...v2.0.1) (2025-04-09)
+
+
+### Bug Fixes
+
+* made a bug fix ([52ad55b](https://github.com/bahag-buttf/semver/commit/52ad55b0ab442d4068582de440d979bf975415f2))
+
 # [2.0.0](https://github.com/bahag-buttf/semver/compare/v1.1.0...v2.0.0) (2025-04-09)
 
 
