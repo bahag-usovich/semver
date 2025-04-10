@@ -9,3 +9,5 @@ Some breaking changes...
 fixed a bug
 
 made a change
+
+fixed a bug
